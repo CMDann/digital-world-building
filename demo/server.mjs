@@ -16,7 +16,7 @@ http.createServer(async (req, res) => {
     if (req.headers.origin && ![`http://127.0.0.1:${port}`, `http://localhost:${port}`].includes(req.headers.origin)) return reply(res, 403, {error:'Same-origin requests only.'});
     const url = new URL(req.url, `http://127.0.0.1:${port}`);
     if (url.pathname === '/api/levels') {
-      if (req.method === 'GET') return reply(res, 200, (await fs.readdir(levels)).filter(n => /^[a-z0-9_-]+\.json$/.test(n)).sort());
+      if (req.method === 'GET') return reply(res, 200, (await fs.readdir(levels)).filter(n => n !== 'index.json' && /^[a-z0-9_-]+\.json$/.test(n)).sort());
       if (req.method !== 'POST') return reply(res, 405, {error:'Method not allowed.'});
       let size = 0; const chunks = [];
       for await (const chunk of req) { size += chunk.length; if (size > 40 * 1024 * 1024) return reply(res, 413, {error:'Scene exceeds 40 MB. Use fewer or smaller models.'}); chunks.push(chunk); }
@@ -44,3 +44,5 @@ http.createServer(async (req, res) => {
     res.end(req.method === 'HEAD' ? undefined : content);
   } catch(error) { reply(res, error.code === 'ENOENT' ? 404 : 400, {error:error.code === 'ENOENT' ? 'File not found.' : error.message}); }
 }).listen(port, '127.0.0.1', () => console.log(`World Seed editor: http://127.0.0.1:${port}`));
+
+

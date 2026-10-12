@@ -21,10 +21,21 @@
       <button data-add="box"><span>◇</span>Box</button><button data-add="sphere"><span>◯</span>Sphere</button>
       <button data-add="cylinder"><span>▱</span>Cylinder</button><button data-add="ground"><span>▰</span>Ground</button>
     </div>
-    <h3>STARTER OBJECTS</h3>
+    <div class="tiles extra-primitives">
+<button data-add="cone"><span>△</span>Cone</button><button data-add="torus"><span>◎</span>Torus</button>
+<button data-add="capsule"><span>♧</span>Capsule</button><button data-add="pyramid"><span>▵</span>Pyramid</button>
+<button data-add="plane"><span>▱</span>Plane</button><button data-add="ramp"><span>◩</span>Ramp</button>
+</div>
+<h3>BUILDING PIECES</h3>
+<div class="tiles">
+<button data-add="wall"><span>▥</span>Wall</button><button data-add="stairs"><span>▟</span>Stairs</button>
+<button data-add="arch"><span>∩</span>Arch</button><button data-add="house"><span>⌂</span>House</button>
+<button data-add="road"><span>═</span>Road</button><button data-add="fence"><span>╫</span>Fence</button>
+</div>
+<h3>STARTER OBJECTS</h3>
     <div class="tiles">
       <button data-add="tree"><span>♠</span>Tree</button><button data-add="car"><span>▣</span>Car</button>
-      <button data-add="rock"><span>⬡</span>Rock</button><button data-add="bench"><span>⊞</span>Bench</button>
+      <button data-add="rock"><span>⬡</span>Rock</button><button data-add="bench"><span>⊞</span>Bench</button><button data-add="bush"><span>♣</span>Bush</button><button data-add="streetlamp"><span>⚑</span>Streetlamp</button>
     </div>
     <h3>LIGHTS</h3>
     <div class="tiles"><button data-add="pointLight"><span>☼</span>Point light</button><button data-add="directionalLight"><span>☀</span>Sun light</button></div>
@@ -55,8 +66,9 @@
     <div class="inspector-note"><span>YOUR NEXT WORLD STARTS HERE</span><p>Build with the starter objects, then bring your own models.</p></div>
   </aside>
 </main>
-<footer class="statusbar"><span id="status" role="status">Ready</span><span>THREE.JS <b>•</b> LOCAL WORKSPACE</span></footer>
-<dialog id="open-dialog"><div class="dialog-heading"><h2>Open a scene</h2><button id="close-dialog" aria-label="Close">×</button></div><p class="muted">Saved in your project's levels folder.</p><div id="saved-levels"></div><button id="import-json">Import JSON from your computer</button></dialog>
+<footer class="statusbar"><span id="status" role="status">Ready</span><span>THREE.JS <b>•</b> <span id="storage-mode">LOCAL WORKSPACE</span></span></footer>
+<dialog id="open-dialog"><div class="dialog-heading"><h2>Open a scene</h2><button id="close-dialog" aria-label="Close">×</button></div><p id="storage-description" class="muted">Saved scenes and bundled examples.</p><div id="saved-levels"></div><button id="import-json">Import JSON from your computer</button></dialog>
 <input id="model-file" type="file" accept=".glb" hidden><input id="json-file" type="file" accept=".json,application/json" hidden>
 <script type="module" src="src/main.js"></script>
 </body></html>
+

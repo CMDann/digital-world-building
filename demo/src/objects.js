@@ -1,7 +1,7 @@
 // Starter props are assembled from simple geometry so every scene works without downloaded art.
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-export const defaults = {box:'#e9a76c', sphere:'#97b6d5', cylinder:'#d6be83', ground:'#88a57a', tree:'#47765b', car:'#dc876b', rock:'#9da4a3', bench:'#b8875c', pointLight:'#ffe3af', directionalLight:'#fff0d5', model:'#ffffff'};
+export const defaults = {box:'#e9a76c', sphere:'#97b6d5', cylinder:'#d6be83', ground:'#88a57a', tree:'#47765b', car:'#dc876b', rock:'#9da4a3', bench:'#b8875c', pointLight:'#ffe3af', directionalLight:'#fff0d5', model:'#ffffff', cone:'#d6ac79', torus:'#ae97cb', capsule:'#89b9bd', pyramid:'#d8bb85', plane:'#aaaeb4', ramp:'#a1a8af', wall:'#c5b9a4', stairs:'#a8a6a0', arch:'#c7b8a0', house:'#d1b18c', road:'#57616a', fence:'#a18565', bush:'#6f935d', streetlamp:'#485862'};
 export function createRecord(type, position = [0,0,0]) {
   return {id:crypto.randomUUID(), type, name:({pointLight:'Point light',directionalLight:'Sun light'})[type] || type[0].toUpperCase()+type.slice(1), position, rotation:[0,0,0], scale:[1,1,1], color:defaults[type], visible:true, ...(type.endsWith('Light') ? {intensity:type === 'pointLight' ? 80 : 3} : {})};
 }
@@ -25,6 +25,20 @@ export async function buildObject(record) {
   const group = new THREE.Group(); group.userData.recordId = record.id;
   const c = record.color;
   switch(record.type) {
+    case 'cone': mesh(group,new THREE.ConeGeometry(.7,1.6,24),c,[0,.8,0],true); break;
+    case 'torus': mesh(group,new THREE.TorusGeometry(.65,.22,12,32),c,[0,.9,0],true); break;
+    case 'capsule': mesh(group,new THREE.CapsuleGeometry(.45,1,6,12),c,[0,.95,0],true); break;
+    case 'pyramid': {const p=mesh(group,new THREE.ConeGeometry(1,1.5,4),c,[0,.75,0],true);p.rotation.y=Math.PI/4;break;}
+    case 'plane': {const p=mesh(group,new THREE.PlaneGeometry(4,4),c,[0,.01,0],true);p.rotation.x=-Math.PI/2;p.material.side=THREE.DoubleSide;break;}
+    case 'ramp': {const shape=new THREE.Shape();shape.moveTo(-1,0);shape.lineTo(1,0);shape.lineTo(1,1.5);shape.closePath();const ramp=mesh(group,new THREE.ExtrudeGeometry(shape,{depth:2,bevelEnabled:false}),c,[0,0,-1],true);break;}
+    case 'wall': box(group,4,3,.25,c,[0,1.5,0],true); break;
+    case 'stairs': for(let i=0;i<6;i++)box(group,2,(i+1)*.25,.5,c,[0,(i+1)*.125,1.25-i*.5],true);break;
+    case 'arch': {box(group,.4,2.1,.5,c,[-1,1.05,0],true);box(group,.4,2.1,.5,c,[1,1.05,0],true);const a=mesh(group,new THREE.TorusGeometry(1,.2,8,24,Math.PI),c,[0,2.1,0],true);a.scale.z=1.25;break;}
+    case 'house': {box(group,3,2.5,3,c,[0,1.25,0],true);const roof=mesh(group,new THREE.ConeGeometry(2.6,1.5,4),'#785d52',[0,3.25,0]);roof.rotation.y=Math.PI/4;box(group,.65,1.7,.05,'#685346',[0,.85,1.52]);for(const x of [-.95,.95])box(group,.55,.65,.06,'#a8d1d6',[x,1.6,1.52]);break;}
+    case 'road': box(group,4,.12,8,c,[0,.02,0],true);for(let z=-3;z<=3;z+=2)box(group,.12,.02,1,'#f3dfa1',[0,.09,z]);break;
+    case 'fence': for(const x of [-1.5,0,1.5])box(group,.15,1.4,.15,c,[x,.7,0],true);for(const y of [.45,1.05])box(group,3.2,.14,.1,c,[0,y,0],true);break;
+    case 'bush': for(const [x,y,z,s] of [[0,.65,0,.8],[-.5,.45,.15,.55],[.5,.45,.1,.6]])mesh(group,new THREE.IcosahedronGeometry(s,1),c,[x,y,z],true);break;
+    case 'streetlamp': box(group,.14,3.6,.14,c,[0,1.8,0],true);box(group,.75,.12,.14,c,[.3,3.55,0],true);mesh(group,new THREE.SphereGeometry(.23,12,8),'#ffdf97',[.65,3.4,0]);{const bulb=new THREE.PointLight('#ffe0a0',35,12,2);bulb.position.set(.65,3.3,0);group.add(bulb);}break;
     case 'box': box(group,1,1,1,c,[0,.5,0],true); break;
     case 'sphere': mesh(group,new THREE.SphereGeometry(.6,24,16),c,[0,.6,0],true); break;
     case 'cylinder': mesh(group,new THREE.CylinderGeometry(.5,.5,1.2,20),c,[0,.6,0],true); break;
@@ -66,3 +80,4 @@ export function applyRecord(group,record) {
 export function disposeObject(group) {
   group.traverse(part=>{part.geometry?.dispose(); if(part.isLight) part.dispose(); for(const mat of (Array.isArray(part.material)?part.material:part.material?[part.material]:[])){ for(const value of Object.values(mat)) if(value?.isTexture) value.dispose(); mat.dispose(); }});
 }
+

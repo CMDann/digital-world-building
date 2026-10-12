@@ -1,0 +1,354 @@
+{
+  "format": "world-seed",
+  "version": 1,
+  "name": "Park study",
+  "environment": {
+    "background": "#c4d6dc",
+    "ambient": 1.3
+  },
+  "camera": {
+    "position": [
+      23,
+      22,
+      27
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "objects": [
+    {
+      "id": "58b2824b-622b-492d-8f0e-e7b2e43fbe0e",
+      "type": "ground",
+      "name": "Meadow",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "color": "#9eaf82",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "892c25e2-1a62-4fd4-b67e-c248bf5a5f40",
+      "type": "box",
+      "name": "Path",
+      "position": [
+        0,
+        -0.015,
+        0
+      ],
+      "color": "#d9ceb0",
+      "scale": [
+        2.7,
+        0.04,
+        19
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "19fe31c1-e550-4041-810e-7027755d87d7",
+      "type": "box",
+      "name": "Crossing",
+      "position": [
+        0,
+        -0.01,
+        2.6
+      ],
+      "color": "#d9ceb0",
+      "scale": [
+        19,
+        0.04,
+        2.1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "8f9be1c9-5891-443f-bb80-3c822e145e76",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        -6,
+        0,
+        -5
+      ],
+      "color": "#517b58",
+      "scale": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "ef3a29e0-05fb-4d83-bc27-78e41d12b54c",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        -3.5,
+        0,
+        -6
+      ],
+      "color": "#517b58",
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "56583211-acdc-4e8e-9de7-72208d83bbc7",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        5,
+        0,
+        -5
+      ],
+      "color": "#517b58",
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "f714c4d2-dd28-441c-b288-cb50fff684d5",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        7,
+        0,
+        -2
+      ],
+      "color": "#517b58",
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "c5526e54-60db-4894-912e-ddb00e3f8ccf",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        -7,
+        0,
+        4
+      ],
+      "color": "#517b58",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "2ede08a4-6c1d-48db-9a22-cec1e2aeab41",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        5,
+        0,
+        6
+      ],
+      "color": "#517b58",
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "c10ec0d2-887a-4413-b90d-0319a3a696af",
+      "type": "tree",
+      "name": "Pine tree",
+      "position": [
+        -5,
+        0,
+        7
+      ],
+      "color": "#517b58",
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "788cdcc0-6b0b-4ce0-acd3-f68ab3b0e0d9",
+      "type": "car",
+      "name": "Terracotta car",
+      "position": [
+        4,
+        0,
+        2.8
+      ],
+      "color": "#d78260",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "dbd1cf46-11e7-4c97-968d-1812eaa3a961",
+      "type": "bench",
+      "name": "Park bench",
+      "position": [
+        -3,
+        0,
+        0.2
+      ],
+      "color": "#aa7950",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "a5a8f313-602b-4db1-88a1-ce021986756a",
+      "type": "rock",
+      "name": "Boulder",
+      "position": [
+        -5,
+        0,
+        -3
+      ],
+      "color": "#8f9a94",
+      "scale": [
+        1.25,
+        1.25,
+        1.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "8c74237f-43b1-4549-9604-df47687fae05",
+      "type": "rock",
+      "name": "Small rock",
+      "position": [
+        -6,
+        0,
+        -2.5
+      ],
+      "color": "#adb0a0",
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true
+    },
+    {
+      "id": "3752927c-2d3f-4e89-999c-67f4bf11770f",
+      "type": "directionalLight",
+      "name": "Afternoon sun",
+      "position": [
+        8,
+        13,
+        6
+      ],
+      "color": "#fff1d6",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "intensity": 3.2
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 // Portable level format shared by the browser and local save server.
-export const TYPES = ['box', 'sphere', 'cylinder', 'ground', 'tree', 'car', 'rock', 'bench', 'pointLight', 'directionalLight', 'model'];
+export const TYPES = ['box', 'sphere', 'cylinder', 'ground', 'tree', 'car', 'rock', 'bench', 'pointLight', 'directionalLight', 'model', 'cone', 'torus', 'capsule', 'pyramid', 'plane', 'ramp', 'wall', 'stairs', 'arch', 'house', 'road', 'fence', 'bush', 'streetlamp'];
 const finite = (n) => typeof n === 'number' && Number.isFinite(n) && Math.abs(n) <= 100000;
 const vector = (v) => Array.isArray(v) && v.length === 3 && v.every(finite);
 const color = (v) => typeof v === 'string' && /^#[0-9a-f]{6}$/i.test(v);
@@ -30,3 +30,4 @@ export function levelFilename(name) {
   if (!slug || /^(con|prn|aux|nul|com[0-9]|lpt[0-9])$/i.test(slug)) throw new Error('Use a scene name with letters or numbers.');
   return `${slug}.json`;
 }
+
