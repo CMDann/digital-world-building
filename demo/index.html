@@ -1,18 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Aurora Station — World Seed</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!-- Vendored locally so the demo runs with no internet connection (CLAUDE.md: no runtime network calls). -->
-  <script src="vendor/aframe-1.8.0.min.js"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Seed · Scene Editor</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="src/editor.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
 </head>
 <body>
-  <a-scene>
-    <a-assets></a-assets>
-    <a-sky color="#0B1A2E"></a-sky>
-  </a-scene>
-
-  <script type="module" src="src/main.js"></script>
-</body>
-</html>
+<header>
+  <div class="brand"><span class="brand-icon">◈</span><div>WORLD SEED<small>SCENE EDITOR</small></div></div>
+  <div class="scene-title"><input id="scene-name" aria-label="Scene name" maxlength="80" value="Park study"><span id="dirty" title="Unsaved changes">●</span></div>
+  <nav><button id="new-scene">New</button><button id="open-scene">Open</button><button id="export-scene">Export JSON</button><button id="save-scene" class="primary">Save scene <kbd>⌘/Ctrl S</kbd></button></nav>
+</header>
+<main>
+  <aside class="library">
+    <div class="panel-heading"><h2>Object library</h2><span class="tag">01</span></div>
+    <p class="muted">Choose an object to add at the view center.</p>
+    <h3>PRIMITIVES</h3>
+    <div class="tiles">
+      <button data-add="box"><span>◇</span>Box</button><button data-add="sphere"><span>◯</span>Sphere</button>
+      <button data-add="cylinder"><span>▱</span>Cylinder</button><button data-add="ground"><span>▰</span>Ground</button>
+    </div>
+    <h3>STARTER OBJECTS</h3>
+    <div class="tiles">
+      <button data-add="tree"><span>♠</span>Tree</button><button data-add="car"><span>▣</span>Car</button>
+      <button data-add="rock"><span>⬡</span>Rock</button><button data-add="bench"><span>⊞</span>Bench</button>
+    </div>
+    <h3>LIGHTS</h3>
+    <div class="tiles"><button data-add="pointLight"><span>☼</span>Point light</button><button data-add="directionalLight"><span>☀</span>Sun light</button></div>
+    <button id="import-model" class="import-button">＋ Import GLB model</button>
+    <p class="hint">Drop a .glb into the viewport.<br>Embedded textures · up to 20 MB</p>
+    <div class="panel-heading hierarchy-heading"><h2>Scene objects</h2><span id="object-count" class="tag">0</span></div>
+    <div id="object-list" aria-label="Scene objects"></div>
+  </aside>
+  <section id="viewport" aria-label="3D scene viewport">
+    <div class="viewport-toolbar"><div class="tool-group"><button data-mode="translate" class="active" title="Move (W)">Move <kbd>W</kbd></button><button data-mode="rotate" title="Rotate (E)">Rotate <kbd>E</kbd></button><button data-mode="scale" title="Scale (R)">Scale <kbd>R</kbd></button></div><div class="tool-group"><button id="focus">Focus <kbd>F</kbd></button><button id="frame-all">Frame all</button><button id="undo" title="Undo (Ctrl Z)">↶</button><button id="redo" title="Redo (Ctrl Shift Z)">↷</button></div></div>
+    <div class="view-label"><i></i> PERSPECTIVE <span>1 unit = 1 meter</span></div>
+    <div class="viewport-footer"><span>Drag to orbit · Right drag to pan · Scroll to zoom</span><label><input id="snap" type="checkbox"> Snap to grid</label></div>
+    <div id="loading">Starting your workspace…</div>
+  </section>
+  <aside class="inspector">
+    <div class="panel-heading"><h2>Inspector</h2><span class="tag">02</span></div>
+    <div id="no-selection" class="empty-inspector"><span>⌖</span><h3>Make it yours.</h3><p>Select an object in the scene<br>to edit its properties.</p></div>
+    <div id="selection-fields" hidden>
+      <div class="type-label" id="selected-type"></div>
+      <label class="field">Object name<input id="object-name" maxlength="100"></label>
+      <label class="check-field"><input id="object-visible" type="checkbox"> Visible in scene</label>
+      <h3>TRANSFORM</h3><div id="transform-fields"></div>
+      <div id="material-fields"><h3>APPEARANCE</h3><label class="color-field">Color<input id="object-color" type="color"></label></div>
+      <div id="light-fields" hidden><h3>LIGHT</h3><label class="field">Intensity<input id="light-intensity" type="number" min="0" max="10000" step="0.1"></label><p class="hint">Sun direction points from its position toward the world origin.</p></div>
+      <div class="selection-actions"><button id="duplicate">Duplicate</button><button id="delete" class="danger">Delete</button></div>
+    </div>
+    <div class="environment"><h3>ENVIRONMENT</h3><label class="color-field">Background<input id="background" type="color" value="#c4d6dc"></label><label class="field">Ambient light <output id="ambient-value">1.3</output><input id="ambient" type="range" min="0" max="5" step="0.1" value="1.3"></label><label class="check-field"><input id="grid" type="checkbox" checked> Show editor grid</label></div>
+    <div class="inspector-note"><span>YOUR NEXT WORLD STARTS HERE</span><p>Build with the starter objects, then bring your own models.</p></div>
+  </aside>
+</main>
+<footer class="statusbar"><span id="status" role="status">Ready</span><span>THREE.JS <b>•</b> LOCAL WORKSPACE</span></footer>
+<dialog id="open-dialog"><div class="dialog-heading"><h2>Open a scene</h2><button id="close-dialog" aria-label="Close">×</button></div><p class="muted">Saved in your project's levels folder.</p><div id="saved-levels"></div><button id="import-json">Import JSON from your computer</button></dialog>
+<input id="model-file" type="file" accept=".glb" hidden><input id="json-file" type="file" accept=".json,application/json" hidden>
+<script type="module" src="src/main.js"></script>
+</body></html>

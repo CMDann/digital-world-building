@@ -8,6 +8,7 @@ In-person workshop · Red River College Polytechnic · Facilitator: Dann Blair (
 |---|---|
 | `01_Workshop_Outline.md` | Run-of-show: modules, timings, slide numbers, activities, facilitator notes |
 | Slide deck | "Digital World Building — RRC Polytech" (Claude Slides artifact; downloadable as PowerPoint or PDF) |
+| `handouts/` | Nine scoping worksheets in `Word/` and `PDF/`, plus a combined packet (`00_Worksheet_Packet_All`) |
 | `02_Scoping_Toolkit.md` | Participant handout: considerations checklist, World Brief template, manual + AI scoping steps, copy-paste prompts |
 | `demo/` | The interactive demonstration, built with Claude Code |
 | `demo/CLAUDE.md` | Standing instructions Claude Code reads every session |

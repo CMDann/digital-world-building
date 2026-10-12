@@ -1,14 +1,16 @@
 # Digital World Building: From Idea to Explorable World
 ### Workshop Outline — Red River College Polytechnic (in person)
 
-**Format:** ~3 hours 10 min, two parts: Foundations (talk) then Workshop (hands-on, groups of 3)
+**Format:** ~3 hours 45 min, two parts: Foundations (talk) then Workshop (hands-on, groups of 3)
 **Audience:** Students and staff; no coding or 3D experience required
 **Facilitator:** Dann Blair
 **Framework:** Consider → Scope → Build, with the 4 Ds (Direction, Description, Discernment, Delegation) guiding AI use
-**Slides:** "Digital World Building — RRC Polytech" deck (36 slides, speaker notes on every slide)
+**Slides:** "Digital World Building — RRC Polytech" deck (45 slides, speaker notes on every slide)
+**Handouts:** nine scoping worksheets in `handouts/` (Word and PDF, plus a combined packet)
 
-> Runs about 3h10. To fit 3 hours: cut the BSD XR case studies to the gallery slide (−5 min) and
-> trim the Seed activity to 5 min. To fit 2 hours: Foundations 25 min, run the Module 2 activity
+> Runs about 3h45. To fit 3 hours: cut the BSD XR case studies to the gallery slide (−5 min), trim
+> the Seed activity to 5 min, run one tools demo instead of two (−10 min), and shorten the live Claude
+> Code build to 10 min. To fit 2 hours: Foundations 25 min, run the Module 2 activity
 > AI-only, and make Module 4 a 10-minute gallery walk.
 
 ---
@@ -29,19 +31,20 @@ By the end, participants can:
 | # | Module | Slides | Time | Running clock |
 |---|---|---|---|---|
 | P1 | Opening: who I am, today's plan | 1–3 | 5 min | 0:05 |
-| P1 | Foundations: digital worlds, the metaverse, storytelling, identity & ownership | 4–17 | 35 min | 0:40 |
-| P1 | BSD XR: my career and the worlds we build | 18–23 | 10 min | 0:50 |
-| 0 | Hook: walk Aurora Station, then collapse it to greybox | 24 | 5 min | 0:55 |
-| 1 | Consider: ten questions + World Seed activity | 25–26 | 25 min | 1:20 |
-| 2 | Scope: the scoping stack, two paths, Brief it twice | 27–29 | 40 min | 2:00 |
-| — | Break | 30 | 10 min | 2:10 |
-| 3 | Build: stages, habits, live Claude Code build | 31–33 | 40 min | 2:50 |
-| 4 | Playtest & critique | 34 | 15 min | 3:05 |
-| 5 | Wrap & thanks | 35–36 | 5 min | 3:10 |
+| P1 | Foundations: digital worlds, the metaverse and XR, storytelling, identity & ownership | 4–20 | 40 min | 0:45 |
+| P1 | BSD XR: my career and the worlds we build | 21–26 | 10 min | 0:55 |
+| 0 | Hook: walk Aurora Station, then collapse it to greybox | 27 | 5 min | 1:00 |
+| 1 | Consider: ten questions + World Seed activity | 28–29 | 25 min | 1:25 |
+| 2 | Scope: the scoping stack, two paths, Brief it twice | 30–32 | 40 min | 2:05 |
+| — | Break | 33 | 10 min | 2:15 |
+| T | Tools: engines, Blender + Claude demo, ComfyUI demo, AI asset guardrails | 34–39 | 30 min | 2:45 |
+| 3 | Build: stages, habits, live Claude Code build | 40–42 | 40 min | 3:25 |
+| 4 | Playtest & critique | 43 | 15 min | 3:40 |
+| 5 | Wrap & thanks | 44–45 | 5 min | 3:45 |
 
 ---
 
-## Part 1 — Foundations (50 min, slides 1–23)
+## Part 1 — Foundations (55 min, slides 1–26)
 
 **Opening (slides 1–3).** Who I am (BSD XR, RRC Polytech, New Media Manitoba), and the two-part plan.
 
@@ -50,28 +53,31 @@ story and reason to exist. The kinds of world (games, social spaces, training si
 museums, spatial web), each shown with a BSD XR project. Five shared ingredients: space, presence,
 rules, story, purpose. Ask the room: what world have you spent real time in?
 
-**The metaverse (7–9).** Timeline: *Snow Crash* (1992) → Second Life (2003) → Roblox (2006) →
+**The metaverse and XR (7–12).** Timeline: *Snow Crash* (1992) → Second Life (2003) → Roblox (2006) →
 Fortnite (2017) → Facebook becomes Meta (2021) → Apple Vision Pro and "spatial computing" (2024).
 Matthew Ball's properties: persistent, real-time 3D, shared, present, interoperable, continuous —
-the last two remain mostly unsolved. Reality check: what was hyped vs what stuck.
+the last two remain mostly unsolved. XR as the way in: the reality–virtuality continuum (AR, MR, VR);
+how XR takes the metaverse off the screen (Fossil Discovery Adventure in AR, CN Rail Near Miss in MR,
+Confined Space in VR); what XR changes for builders (felt scale, body as input, the room as part of the
+level, comfort). Reality check: what was hyped vs what stuck.
 
-**Digital storytelling (10–13).** "In a world, the space is the story." Jenkins' four narrative types
+**Digital storytelling (13–16).** "In a world, the space is the story." Jenkins' four narrative types
 (evoked, enacted, embedded, emergent). Cases: *Reclaim! Azhe-giiwewining* (story through mechanics),
 CN Rail *Near Miss* (story through consequence).
 
-**Digital identity & ownership (14–17).** Avatar, presence, persistence; the Proteus effect. What you
+**Digital identity & ownership (17–20).** Avatar, presence, persistence; the Proteus effect. What you
 "own" vs what you usually have (licences, platform terms, likeness, behavioural data); the NFT
 cycle and the still-open portability question. Ownership of knowledge: OCAP® principles, with the
 Myera Farms digital twin. Five questions every builder should answer — these feed the brief's
 culture & ethics section.
 
-**BSD XR (18–23).** Studio overview and clients; my path (build, found, share, teach; the 4 Ds);
+**BSD XR (21–26).** Studio overview and clients; my path (build, found, share, teach; the 4 Ds);
 gallery of worlds; cases: The Grid (modular kits), CEDF Northern Museum (capture + design),
 VWS Amphitheater and Hawaiian Cultural Worlds (gathering and belonging).
 
 ---
 
-## Module 0 — Hook (5 min, slide 24)
+## Module 0 — Hook (5 min, slide 27)
 
 - Projector: open the demo world **Aurora Station** at full polish. Walk it for 60 seconds — dock, trail, lookout, frozen lake under aurora.
 - Press `1`: the world collapses to grey boxes. "This is what it looked like on day one."
@@ -82,7 +88,7 @@ VWS Amphitheater and Hawaiian Cultural Worlds (gathering and belonging).
 
 ---
 
-## Module 1 — Considerations (25 min, slides 25–26)
+## Module 1 — Considerations (25 min, slides 28–29)
 
 Teach as ten questions every world must answer. Show each in the demo where possible.
 
@@ -107,7 +113,7 @@ Teach as ten questions every world must answer. Show each in the demo where poss
 
 ---
 
-## Module 2 — Scoping (40 min, slides 27–29)
+## Module 2 — Scoping (40 min, slides 30–32)
 
 ### 2a. The scoping stack (10 min)
 A world is scoped in layers. Each layer is only as detailed as the build needs.
@@ -144,7 +150,41 @@ Facilitator: pick one group's brief for the live build. Pick a brief with a clea
 
 ---
 
-## Module 3 — Building & implementing (40 min, slides 31–33)
+## Module T — Tools (30 min, slides 34–39)
+
+**Engines (8 min, slides 34–35).** Godot, Unity, Unreal and the web compared on cost, language,
+strengths and watch-outs (as of fall 2026: Godot free/MIT; Unity Personal free under $200K revenue or
+funding; Unreal free until a title earns $1M lifetime gross, then 5%). Then: let the brief choose the
+engine. Groups tick the boxes on Worksheet 08.
+
+**Asset pipeline (2 min, slide 36).** Asset list → ComfyUI (concept, texture or rough mesh) → Blender +
+Claude (build, clean up, scale, name, export) → engine.
+
+**Demo: Blender + Claude via MCP (10 min, slide 37).** Prompt Claude to build `dock_lantern_a`
+(2.2 m, under 800 triangles, pivot at base, amber light). Show it inspecting the scene, writing and
+running Blender Python, checking with a screenshot, then exporting a GLB and dropping it into Aurora
+Station.
+
+**Demo: ComfyUI (10 min, slide 38).** Image: concept of the research hut from the brief's palette and
+mood words. Video: animate that frame into a short mood clip. 3D: image-to-3D of the lantern (TRELLIS.2
+and Pixal3D are native in ComfyUI as of Aug 2026), then open it in Blender beside Claude's version.
+
+**Guardrails (2 min, slide 39).** Check the model licence, ask before generating real people, logos or
+cultural designs, label AI assets in the ledger, clean meshes before use.
+
+### Tools demo prep
+- [ ] Blender 5.1+ with Blender Lab's official MCP add-on enabled, connected to Claude, tested on the venue network
+- [ ] Optional: community "MCP for Blender" if you want Poly Haven, Sketchfab or AI generation in the demo
+- [ ] Demo on a **copy** of the .blend: MCP runs Claude's code with no guards. Save before every prompt
+- [ ] Lantern prompt rehearsed; a pre-built `dock_lantern_a.glb` saved as fallback
+- [ ] ComfyUI updated (0.34.0+ for native TRELLIS.2 / Pixal3D); image, video and image-to-3D workflows loaded as saved tabs
+- [ ] All models downloaded in advance (no downloads on venue Wi-Fi); each workflow run once that morning to warm the GPU
+- [ ] Pre-rendered outputs (image, clip, mesh) in a `demo/fallback` folder in case generation is slow
+- [ ] Check each model's licence before showing outputs as usable assets
+
+---
+
+## Module 3 — Building & implementing (40 min, slides 40–42)
 
 ### 3a. Best practices (25 min) — demo each with build-stage keys `1`–`5`
 
@@ -173,7 +213,7 @@ Moving to Unity / Unreal / production WebXR: the same scope stack carries over. 
 
 ---
 
-## Module 4 — Playtest & critique (15 min, slide 34)
+## Module 4 — Playtest & critique (15 min, slide 43)
 
 - Groups walk the live-built zone (and the full demo) on laptops or a Quest.
 - Critique structure, 2 min per group: **one thing that reads, one thing that confuses, one thing to cut.**
@@ -181,7 +221,7 @@ Moving to Unity / Unreal / production WebXR: the same scope stack carries over. 
 
 ---
 
-## Module 5 — Wrap (5 min, slides 35–36)
+## Module 5 — Wrap (5 min, slides 44–45)
 
 - Recap: Consider → Scope → Build. The scope doc is the product before the product.
 - Take-home: Scoping Toolkit, link to the demo repo, the prompt chain.
@@ -203,7 +243,8 @@ Moving to Unity / Unreal / production WebXR: the same scope stack carries over. 
 ## Materials
 
 - Laptop + projector + clicker; optional Meta Quest 3
-- Printed World Brief templates and seed cards
+- Printed worksheet packet (`handouts/PDF/00_Worksheet_Packet_All.pdf`, 14 pages, one per participant or per group) and seed cards
+- Presenter machine with a capable GPU for ComfyUI, plus Blender 5.1+
 - Participant access to Claude (or one shared station per group)
 - Whiteboard / sticky notes for the manual path
 
