@@ -1,9 +1,10 @@
 // Starter props are assembled from simple geometry so every scene works without downloaded art.
 import * as THREE from 'three';
+import { physicsSettings } from './physics-settings.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-export const defaults = {box:'#e9a76c', sphere:'#97b6d5', cylinder:'#d6be83', ground:'#88a57a', tree:'#47765b', car:'#dc876b', rock:'#9da4a3', bench:'#b8875c', pointLight:'#ffe3af', directionalLight:'#fff0d5', model:'#ffffff', cone:'#d6ac79', torus:'#ae97cb', capsule:'#89b9bd', pyramid:'#d8bb85', plane:'#aaaeb4', ramp:'#a1a8af', wall:'#c5b9a4', stairs:'#a8a6a0', arch:'#c7b8a0', house:'#d1b18c', road:'#57616a', fence:'#a18565', bush:'#6f935d', streetlamp:'#485862'};
+export const defaults = {box:'#e9a76c', sphere:'#97b6d5', cylinder:'#d6be83', ground:'#88a57a', tree:'#47765b', car:'#dc876b', rock:'#9da4a3', bench:'#b8875c', pointLight:'#ffe3af', directionalLight:'#fff0d5', model:'#ffffff', cone:'#d6ac79', torus:'#ae97cb', capsule:'#89b9bd', pyramid:'#d8bb85', plane:'#aaaeb4', ramp:'#a1a8af', wall:'#c5b9a4', stairs:'#a8a6a0', arch:'#c7b8a0', house:'#d1b18c', road:'#57616a', fence:'#a18565', bush:'#6f935d', streetlamp:'#485862', person:'#6689b6'};
 export function createRecord(type, position = [0,0,0]) {
-  return {id:crypto.randomUUID(), type, name:({pointLight:'Point light',directionalLight:'Sun light'})[type] || type[0].toUpperCase()+type.slice(1), position, rotation:[0,0,0], scale:[1,1,1], color:defaults[type], visible:true, ...(type.endsWith('Light') ? {intensity:type === 'pointLight' ? 80 : 3} : {})};
+  return {physics:physicsSettings({type}),id:crypto.randomUUID(), type, name:({pointLight:'Point light',directionalLight:'Sun light'})[type] || type[0].toUpperCase()+type.slice(1), position, rotation:[0,0,0], scale:[1,1,1], color:defaults[type], visible:true, ...(type==='person'?{behavior:{type:'wander',speed:1,distance:4,delay:0,loop:true}}:{}), ...(type.endsWith('Light') ? {intensity:type === 'pointLight' ? 80 : 3} : {})};
 }
 function mesh(group, geometry, color, position, tint = false) {
   const part = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({color, roughness:.82, flatShading:true}));
@@ -25,6 +26,15 @@ export async function buildObject(record) {
   const group = new THREE.Group(); group.userData.recordId = record.id;
   const c = record.color;
   switch(record.type) {
+    case 'person': {
+      box(group,.46,.6,.25,c,[0,1.05,0],true);
+      mesh(group,new THREE.SphereGeometry(.19,12,10),'#d8b08c',[0,1.6,0]);
+      mesh(group,new THREE.SphereGeometry(.195,12,8),'#554638',[0,1.68,-.02]).scale.set(1,.6,1);
+      const legs=[],arms=[];
+      for(const x of [-.13,.13]){const leg=new THREE.Group();leg.position.set(x,.76,0);group.add(leg);box(leg,.17,.58,.2,'#344655',[0,-.29,0]);box(leg,.19,.13,.31,'#30393d',[0,-.68,.045]);legs.push(leg);}
+      for(const x of [-.32,.32]){const arm=new THREE.Group();arm.position.set(x,1.32,0);group.add(arm);box(arm,.14,.45,.18,c,[0,-.2,0],true);mesh(arm,new THREE.SphereGeometry(.085,8,6),'#d8b08c',[0,-.46,0]);arms.push(arm);}
+      group.userData.walkParts={legs,arms};break;
+    }
     case 'cone': mesh(group,new THREE.ConeGeometry(.7,1.6,24),c,[0,.8,0],true); break;
     case 'torus': mesh(group,new THREE.TorusGeometry(.65,.22,12,32),c,[0,.9,0],true); break;
     case 'capsule': mesh(group,new THREE.CapsuleGeometry(.45,1,6,12),c,[0,.95,0],true); break;
@@ -80,4 +90,5 @@ export function applyRecord(group,record) {
 export function disposeObject(group) {
   group.traverse(part=>{part.geometry?.dispose(); if(part.isLight) part.dispose(); for(const mat of (Array.isArray(part.material)?part.material:part.material?[part.material]:[])){ for(const value of Object.values(mat)) if(value?.isTexture) value.dispose(); mat.dispose(); }});
 }
+
 

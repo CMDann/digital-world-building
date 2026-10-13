@@ -1,0 +1,65 @@
+[
+  {
+    "file": "open-meadow.json",
+    "title": "Open meadow",
+    "icon": "□",
+    "description": "A clear 120 m meadow with daylight. Start with space and build anything.",
+    "count": 2
+  },
+  {
+    "file": "village-street.json",
+    "title": "Village street",
+    "icon": "⌂",
+    "description": "A tree-lined neighborhood with walking residents and a car driving down the street.",
+    "count": 26
+  },
+  {
+    "file": "forest-clearing.json",
+    "title": "Forest clearing",
+    "icon": "♠",
+    "description": "A quiet clearing surrounded by trees, rocks, and benches. Practice scale and placement.",
+    "count": 49
+  },
+  {
+    "file": "physics-playground.json",
+    "title": "Physics playground",
+    "icon": "▦",
+    "description": "Knock over stacked crates and dominoes. Press Play, then walk into props in first person.",
+    "count": 31
+  },
+  {
+    "file": "sculpture-gallery.json",
+    "title": "Sculpture gallery",
+    "icon": "◈",
+    "description": "A walkable exhibition of primitive shapes. Experiment with composition, color, and scale.",
+    "count": 18
+  },
+  {
+    "file": "night-plaza.json",
+    "title": "Night plaza",
+    "icon": "☾",
+    "description": "A plaza after dark. Balance ambient light, warm lamps, and a colored centerpiece.",
+    "count": 19
+  },
+  {
+    "file": "driving-avenue.json",
+    "title": "Driving avenue",
+    "icon": "⇄",
+    "description": "Two cars on repeating routes. Adjust speeds, delays, and distances in the inspector.",
+    "count": 33
+  },
+  {
+    "file": "adventure-course.json",
+    "title": "Adventure course",
+    "icon": "∩",
+    "description": "Walk through arches and around obstacles. Test movement, collisions, and viewpoints.",
+    "count": 25
+  },
+  {
+    "file": "park-study.json",
+    "title": "Park study",
+    "icon": "♧",
+    "description": "The original park, with paths, trees, props, and room to expand.",
+    "count": 25
+  }
+]

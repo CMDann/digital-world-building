@@ -8,7 +8,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const levels = path.join(root, 'levels');
 await fs.mkdir(levels, { recursive: true });
 const port = Number(process.env.PORT || 8080);
-const mime = { '.html':'text/html; charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.json':'application/json', '.glb':'model/gltf-binary', '.png':'image/png', '.svg':'image/svg+xml', '.ico':'image/x-icon' };
+const mime = { '.html':'text/html; charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.json':'application/json', '.glb':'model/gltf-binary', '.png':'image/png', '.svg':'image/svg+xml', '.ico':'image/x-icon', '.pdf':'application/pdf', '.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '.ttf':'font/ttf', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp' };
 const reply = (res, status, value) => { res.writeHead(status, {'Content-Type':'application/json', 'Cache-Control':'no-store'}); res.end(JSON.stringify(value)); };
 http.createServer(async (req, res) => {
   try {

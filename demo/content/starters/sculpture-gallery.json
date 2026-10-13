@@ -1,0 +1,515 @@
+{
+  "format": "world-seed",
+  "version": 1,
+  "name": "Sculpture gallery",
+  "environment": {
+    "background": "#dedcd4",
+    "ambient": 1.7
+  },
+  "camera": {
+    "position": [
+      22,
+      18,
+      25
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ]
+  },
+  "spawn": [
+    0,
+    0,
+    8
+  ],
+  "objects": [
+    {
+      "id": "b396758e-1610-4242-ac3a-1d6d63113c57",
+      "type": "ground",
+      "name": "Ground",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        6,
+        1,
+        6
+      ],
+      "color": "#c6c2b8",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "cf7dcde2-10f1-483a-ab58-bb81c0ff4f0a",
+      "type": "directionalLight",
+      "name": "DirectionalLight",
+      "position": [
+        12,
+        22,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#fff0d5",
+      "visible": true,
+      "physics": {
+        "mode": "none",
+        "mass": 5,
+        "restitution": 0.1
+      },
+      "intensity": 3
+    },
+    {
+      "id": "3c28694a-67d2-4c01-983a-e93ce8d12ed5",
+      "type": "wall",
+      "name": "Wall",
+      "position": [
+        0,
+        0,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        5,
+        1.5,
+        1
+      ],
+      "color": "#e5dfd2",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "98aee67c-6582-4bdd-9ee0-29dda4cedeee",
+      "type": "wall",
+      "name": "Wall",
+      "position": [
+        -10,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "scale": [
+        5,
+        1.5,
+        1
+      ],
+      "color": "#ded6c7",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "e8e68772-9c1c-455e-95bf-0a1272c4923d",
+      "type": "wall",
+      "name": "Wall",
+      "position": [
+        10,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "scale": [
+        5,
+        1.5,
+        1
+      ],
+      "color": "#ded6c7",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "f8da7431-6680-44a4-9c8a-017c3cff0c01",
+      "type": "box",
+      "name": "Box",
+      "position": [
+        -6,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        1,
+        2
+      ],
+      "color": "#eee9df",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "97d0ae55-dcdb-46cb-a16b-51df459ebf3e",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        -6,
+        1,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "color": "#c78862",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "0bb70245-a991-4621-aa1b-63c0546d5eb1",
+      "type": "box",
+      "name": "Box",
+      "position": [
+        0,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        1,
+        2
+      ],
+      "color": "#eee9df",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "a8b0954c-8f5f-4c65-b678-b0064cd277ea",
+      "type": "torus",
+      "name": "Torus",
+      "position": [
+        0,
+        1,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "color": "#91b9bd",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "ed6f70e0-3706-4454-a877-a8b08c9788cc",
+      "type": "box",
+      "name": "Box",
+      "position": [
+        6,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        1,
+        2
+      ],
+      "color": "#eee9df",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "a713d909-e963-42e8-b058-e292f6259d60",
+      "type": "cone",
+      "name": "Cone",
+      "position": [
+        6,
+        1,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "color": "#a69ac1",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "694450d9-e8c7-481e-b660-a9a5e38f2856",
+      "type": "box",
+      "name": "Box",
+      "position": [
+        -6,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        1,
+        2
+      ],
+      "color": "#eee9df",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "e91e4a0a-964a-4bc5-808f-b5a6ec591615",
+      "type": "pyramid",
+      "name": "Pyramid",
+      "position": [
+        -6,
+        1,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "color": "#c78862",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "f65f4a36-2abe-49a8-bf59-eaccf838d364",
+      "type": "box",
+      "name": "Box",
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        1,
+        2
+      ],
+      "color": "#eee9df",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "ce4e7dd5-3e86-4c39-8a58-f50c54d1eadf",
+      "type": "capsule",
+      "name": "Capsule",
+      "position": [
+        0,
+        1,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "color": "#91b9bd",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "6a037c0c-a69c-476c-9338-21ea4cae870e",
+      "type": "box",
+      "name": "Box",
+      "position": [
+        6,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        1,
+        2
+      ],
+      "color": "#eee9df",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "9850a98f-b2da-4374-b27e-0bbfdc9b5347",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        6,
+        1,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "color": "#a69ac1",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "4df0fa82-18ab-4d1c-98ad-662fdd1627da",
+      "type": "arch",
+      "name": "Arch",
+      "position": [
+        0,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "color": "#d3bc99",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    }
+  ]
+}

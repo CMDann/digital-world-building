@@ -10,15 +10,15 @@ async function evaluate(expression){const r=await send('Runtime.evaluate',{expre
 async function waitFor(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await new Promise(r=>setTimeout(r,100));}throw new Error('Timed out: '+expression);}
 const click=id=>evaluate(`document.getElementById(${JSON.stringify(id)}).click()`);
 const set=(id,value)=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)});e.value=${JSON.stringify(value)};e.dispatchEvent(new Event('change',{bubbles:true}));})()`);
-await send('Runtime.enable');await send('Page.enable');await send('Page.reload');
+await send('Runtime.enable');await send('Page.enable');await evaluate('delete document.documentElement.dataset.editorReady');await send('Page.reload');
 await waitFor('document.documentElement.dataset.editorReady === "true"');
 await new Promise(r=>setTimeout(r,1500));
 await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
 await new Promise(r=>setTimeout(r,300));
 await fs.writeFile('tests/editor-preview.png',Buffer.from((await send('Page.captureScreenshot',{format:'png'})).data,'base64'));
-const initial=await evaluate('document.querySelectorAll(".object-row").length');assert.equal(initial,15);
+const initial=await evaluate('document.querySelectorAll(".object-row").length');assert.equal(initial,JSON.parse(await fs.readFile('levels/park-study.json','utf8')).objects.length);
 await evaluate('document.querySelector("[data-add=box]").click()');await waitFor(`document.querySelectorAll('.object-row').length === ${initial+1}`);
-await set('object-name','Test cube');await set('position-0','3.5');await set('rotation-1','45');await set('scale-2','2');await set('object-color','#ff0000');
+await set('object-name','Test cube');await set('position-0','3.5');await set('rotation-1','45');await set('scale-2','2');await set('object-color','#ff0000');await set('physics-mass','8');await set('physics-bounce','0.35');
 await click('duplicate');await waitFor(`document.querySelectorAll('.object-row').length === ${initial+2}`);
 await click('delete');await waitFor(`document.querySelectorAll('.object-row').length === ${initial+1}`);
 await click('undo');await waitFor(`document.querySelectorAll('.object-row').length === ${initial+2}`);
@@ -30,7 +30,7 @@ let json=JSON.stringify(gltf);json=json.padEnd(Math.ceil(json.length/4)*4,' ');c
 await fs.writeFile('tests/triangle.glb',glb);
 const dom=await send('DOM.getDocument');const input=await send('DOM.querySelector',{nodeId:dom.root.nodeId,selector:'#model-file'});await send('DOM.setFileInputFiles',{nodeId:input.nodeId,files:[process.cwd()+'/tests/triangle.glb']});await waitFor(`document.querySelectorAll('.object-row').length === ${initial+2}`);
 const name='editor-smoke-'+Date.now();await set('scene-name',name);await click('save-scene');await waitFor(`document.getElementById('status').textContent.includes('Saved to levels/${name}.json')`);
-const saved=await (await fetch(`http://127.0.0.1:8080/levels/${name}.json`)).json();const cube=saved.objects.find(o=>o.name==='Test cube');assert.equal(cube.position[0],3.5);assert.equal(cube.rotation[1],Math.PI/4);assert.equal(cube.scale[2],2);assert.equal(cube.color,'#ff0000');assert.ok(saved.objects.find(o=>o.type==='model').model.startsWith('data:'));
+const saved=await (await fetch(`http://127.0.0.1:8080/levels/${name}.json`)).json();const cube=saved.objects.find(o=>o.name==='Test cube');assert.equal(cube.position[0],3.5);assert.equal(cube.rotation[1],Math.PI/4);assert.equal(cube.scale[2],2);assert.equal(cube.color,'#ff0000');assert.equal(cube.physics.mass,8);assert.equal(cube.physics.restitution,.35);assert.ok(saved.objects.find(o=>o.type==='model').model.startsWith('data:'));
 await click('new-scene');await waitFor('document.querySelectorAll(".object-row").length===2');
 await send('Page.handleJavaScriptDialog',{accept:true}).catch(()=>{});
 // New scene is dirty; approve the explicit discard prompt for the reopen test.
@@ -44,4 +44,5 @@ const cross=await fetch('http://127.0.0.1:8080/api/levels',{method:'POST',header
 await fs.unlink(`levels/${name}.json`);
 assert.deepEqual(errors,[]);console.log('PASS: WebGL startup; add, transform, recolor, duplicate, delete, undo/redo; GLB import; folder save and reopen with model; invalid JSON and cross-origin rejection; no browser exceptions.');
 ws.close();
+
 

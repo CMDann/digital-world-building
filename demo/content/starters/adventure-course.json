@@ -1,0 +1,704 @@
+{
+  "format": "world-seed",
+  "version": 1,
+  "name": "Adventure course",
+  "environment": {
+    "background": "#c3d7df",
+    "ambient": 1.3
+  },
+  "camera": {
+    "position": [
+      22,
+      18,
+      25
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ]
+  },
+  "spawn": [
+    0,
+    0,
+    10
+  ],
+  "objects": [
+    {
+      "id": "61c0bb29-31f0-42d6-96f6-329a918ee4ef",
+      "type": "ground",
+      "name": "Ground",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        6,
+        1,
+        6
+      ],
+      "color": "#b1a482",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "5ec2d997-52d7-433c-a7d7-46bcfefb9ba3",
+      "type": "directionalLight",
+      "name": "DirectionalLight",
+      "position": [
+        12,
+        22,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#fff0d5",
+      "visible": true,
+      "physics": {
+        "mode": "none",
+        "mass": 5,
+        "restitution": 0.1
+      },
+      "intensity": 3
+    },
+    {
+      "id": "2202e43b-6769-43e9-8ecb-11e0f0151f19",
+      "type": "arch",
+      "name": "Arch",
+      "position": [
+        0,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "color": "#b99c79",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "d00b0fd7-c834-404c-83eb-763baa9cdf67",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        -5,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "33cfb6ea-0887-41e1-b67b-18c105782dc8",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        5,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "8bc240f8-75e2-426f-a319-f1ab53f4c31e",
+      "type": "arch",
+      "name": "Arch",
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "color": "#b99c79",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "32ad4e23-08c3-4d4b-be90-ec4b1caafc79",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        -5,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.3,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "4b24a7ec-0d4f-4ad4-b3f1-04e554604851",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        5,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.3,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "8c4121af-659e-4a1d-b84f-a995aec110b8",
+      "type": "arch",
+      "name": "Arch",
+      "position": [
+        0,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "color": "#b99c79",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "0bcfb532-f733-4507-ae40-7419650f498e",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        -5,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.6,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "c5e16d5e-6033-4164-a4fe-e925ae609614",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        5,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.6,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "a685c316-9e60-4dc8-a40a-13d7884d836e",
+      "type": "arch",
+      "name": "Arch",
+      "position": [
+        0,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "color": "#b99c79",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "b2938243-3bc8-45ee-9969-569581904190",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        -5,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.9,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "31113304-78fc-40ee-ac0d-23c3cc00ca31",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        5,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.9,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "7a76329a-3191-45ef-8597-a73ee58d256d",
+      "type": "arch",
+      "name": "Arch",
+      "position": [
+        0,
+        0,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "color": "#b99c79",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "488a3f70-d7bb-47a1-9044-c6f49041e9cd",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        -5,
+        0,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        2.2,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "5ed8f899-2ba5-46bd-9d66-5c7188c02afd",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        5,
+        0,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        2.2,
+        1
+      ],
+      "color": "#ba9472",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "9fffe6e6-4d35-4684-ac56-3082e6f9444c",
+      "type": "stairs",
+      "name": "Stairs",
+      "position": [
+        -7,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "color": "#b1b1a0",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "a6deadc0-198f-410a-80f8-e054ee59f597",
+      "type": "ramp",
+      "name": "Ramp",
+      "position": [
+        7,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "color": "#b1b1a0",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "3dab5836-43c7-4635-9e64-f983947d6144",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        -2,
+        0,
+        -20
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#cf926b",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "ae669f61-93fa-4c3d-8d9b-fadcc93cab19",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        0,
+        0,
+        -20
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#cf926b",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "9239c615-29ea-4f60-8f87-215100457311",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        2,
+        0,
+        -20
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#cf926b",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "952ab216-c005-42f0-ac52-c2aa431f90c9",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        -2,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#cf926b",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "39eba827-6eba-4b02-8cb0-72d6b46eb6a7",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        0,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#cf926b",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "d4285180-cf49-41cb-8ca3-d5e29c250700",
+      "type": "sphere",
+      "name": "Sphere",
+      "position": [
+        2,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#cf926b",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    }
+  ]
+}

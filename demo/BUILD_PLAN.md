@@ -94,3 +94,7 @@ status table and stop for review unless told to continue.
 - List known issues in OPEN_QUESTIONS.md.
 
 **Accept when:** all success criteria pass and Dann has rehearsed the reveal and live build once.
+
+## Current direction — scene editor (2026-10-12)
+The user replaced the Aurora-only build sequence with a general Three.js editor: editable objects/lights, portable JSON levels, local folder saves, GitHub Pages with browser persistence, imported GLB assets, preset movement actions, and Play with orbit/first/third-person, fullscreen, and WebXR. The original milestones above are historical; do not apply their stop-between-milestones rule to this editor. See README.md for current controls and limitations.
+

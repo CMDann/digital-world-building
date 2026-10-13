@@ -30,9 +30,9 @@
       ],
       "color": "#9eaf82",
       "scale": [
+        6,
         1,
-        1,
-        1
+        6
       ],
       "rotation": [
         0,
@@ -54,14 +54,19 @@
       "scale": [
         2.7,
         0.04,
-        19
+        100
       ],
       "rotation": [
         0,
         0,
         0
       ],
-      "visible": true
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.05
+      }
     },
     {
       "id": "19fe31c1-e550-4041-810e-7027755d87d7",
@@ -74,7 +79,7 @@
       ],
       "color": "#d9ceb0",
       "scale": [
-        19,
+        100,
         0.04,
         2.1
       ],
@@ -83,7 +88,12 @@
         0,
         0
       ],
-      "visible": true
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.05
+      }
     },
     {
       "id": "8f9be1c9-5891-443f-bb80-3c822e145e76",
@@ -200,9 +210,9 @@
       "type": "tree",
       "name": "Pine tree",
       "position": [
-        5,
+        7,
         0,
-        6
+        8
       ],
       "color": "#517b58",
       "scale": [
@@ -244,7 +254,7 @@
       "type": "car",
       "name": "Terracotta car",
       "position": [
-        4,
+        -7,
         0,
         2.8
       ],
@@ -259,7 +269,14 @@
         1.5707963267948966,
         0
       ],
-      "visible": true
+      "visible": true,
+      "behavior": {
+        "type": "drive",
+        "speed": 2.5,
+        "distance": 14,
+        "delay": 2,
+        "loop": true
+      }
     },
     {
       "id": "dbd1cf46-11e7-4c97-968d-1812eaa3a961",
@@ -349,6 +366,285 @@
       ],
       "visible": true,
       "intensity": 3.2
+    },
+    {
+      "id": "2d7df971-5269-423f-a7e3-6f231bf96111",
+      "type": "person",
+      "name": "Alex",
+      "position": [
+        -2,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#678ab8",
+      "visible": true,
+      "behavior": {
+        "type": "wander",
+        "speed": 0.8,
+        "distance": 5,
+        "delay": 0,
+        "loop": true
+      }
+    },
+    {
+      "id": "cfb003ce-bfe2-4655-b104-3cd3bf3f207f",
+      "type": "person",
+      "name": "Sam",
+      "position": [
+        2,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bc8567",
+      "visible": true,
+      "behavior": {
+        "type": "wander",
+        "speed": 0.8,
+        "distance": 5,
+        "delay": 0,
+        "loop": true
+      }
+    },
+    {
+      "id": "3dec87dc-f324-49b4-a414-3985a95b2b9f",
+      "name": "Stack crate 0-0",
+      "type": "box",
+      "position": [
+        3,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "color": "#c59868",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "f998ad9f-89c7-4717-a605-4d77c398e65f",
+      "name": "Stack crate 0-1",
+      "type": "box",
+      "position": [
+        3.92,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "color": "#c59868",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "7fcc1693-0307-4b44-8ddd-aec642e5cefa",
+      "name": "Stack crate 0-2",
+      "type": "box",
+      "position": [
+        4.84,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "color": "#c59868",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "37dc5c99-6fc9-42da-b8e1-c54302fcb5d5",
+      "name": "Stack crate 1-0",
+      "type": "box",
+      "position": [
+        3.46,
+        0.92,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "color": "#d9af78",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "24dab69e-d43d-47c5-8b0c-4c60e48e066c",
+      "name": "Stack crate 1-1",
+      "type": "box",
+      "position": [
+        4.38,
+        0.92,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "color": "#d9af78",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "a9c734dc-6db1-4990-a0f7-8576d8b92744",
+      "name": "Stack crate 2-0",
+      "type": "box",
+      "position": [
+        3.92,
+        1.84,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "color": "#af8057",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "201b465b-bacb-4623-871d-681550501857",
+      "name": "Tipping post",
+      "type": "cylinder",
+      "position": [
+        -2,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.6,
+        2.4,
+        0.6
+      ],
+      "color": "#c38161",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "4b80f07c-bb95-4219-b934-9fd9ab7b02cb",
+      "name": "Play ball",
+      "type": "sphere",
+      "position": [
+        1.7,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "color": "#799dcc",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 3,
+        "restitution": 0.1
+      }
     }
+  ],
+  "spawn": [
+    0,
+    0,
+    7
   ]
 }

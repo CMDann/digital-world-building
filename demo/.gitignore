@@ -1,3 +1,8 @@
 dist-pages/
 tests/editor-preview.png
 tests/triangle.glb
+tests/play-preview.png
+
+tests/learn-preview.png
+tests/webxr-preview.png
+tests/build-preview.png

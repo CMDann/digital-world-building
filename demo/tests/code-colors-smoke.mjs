@@ -1,0 +1,20 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const pages=await (await fetch('http://127.0.0.1:9223/json')).json();
+const ws=new WebSocket(pages.find(p=>p.type==='page').webSocketDebuggerUrl);await new Promise(r=>ws.addEventListener('open',r,{once:true}));
+let id=0;const pending=new Map(),errors=[];
+ws.addEventListener('message',event=>{const m=JSON.parse(event.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);if(m.method==='Page.javascriptDialogOpening')send('Page.handleJavaScriptDialog',{accept:true});});
+function send(method,params={}){return new Promise((resolve,reject)=>{const n=++id;const timer=setTimeout(()=>reject(new Error('CDP timeout: '+method+' '+JSON.stringify(params).slice(0,180))),15000);pending.set(n,{resolve:value=>{clearTimeout(timer);resolve(value);},reject});ws.send(JSON.stringify({id:n,method,params}));});}
+async function evaluate(expression){const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;}
+async function waitFor(expression){for(let i=0;i<100;i++){if(await evaluate(expression))return;await new Promise(r=>setTimeout(r,100));}throw new Error('Timed out: '+expression);}
+const click=id=>evaluate(`document.getElementById(${JSON.stringify(id)}).click()`);
+const set=(id,value)=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)});e.value=${JSON.stringify(value)};e.dispatchEvent(new Event('change',{bubbles:true}));})()`);
+
+
+await send('Runtime.enable');await send('Page.enable');await send('Page.navigate',{url:'http://127.0.0.1:8080/?colors='+Date.now()+'#webxr'});await waitFor('document.getElementById("example-code-status")?.textContent.startsWith("Running")');
+await click('example-reset');await waitFor('document.getElementById("example-code-status").textContent.startsWith("Running")');const original=await evaluate('document.getElementById("example-code").value');assert.ok(await evaluate('document.querySelectorAll("#example-code-colors input").length>2'));
+await evaluate('(()=>{const input=document.querySelector("#example-code-colors input");input.value="#ff3366";input.dispatchEvent(new Event("change",{bubbles:true}));})()');assert.equal(await evaluate('document.getElementById("example-code").value'),original.replace('0x0a0a0a','0xff3366'));assert.ok((await evaluate('document.getElementById("example-code-status").textContent')).startsWith('Edited'));
+await click('example-run');await waitFor('document.getElementById("example-code-status").textContent.startsWith("Running")');await send('Page.reload');await waitFor('document.getElementById("example-code-status")?.textContent.startsWith("Running")');assert.equal(await evaluate('document.querySelector("#example-code-colors input").value'),'#ff3366');
+await evaluate('document.getElementById("example-code").value='+JSON.stringify("const a='#abc',b='#abc';")+';document.getElementById("example-code").dispatchEvent(new Event("input"))');await evaluate('(()=>{const input=document.querySelectorAll("#example-code-colors input")[1];input.value="#123456";input.dispatchEvent(new Event("change"));})()');assert.equal(await evaluate('document.getElementById("example-code").value'),"const a='#abc',b='#123456';");
+await click('example-reset');await waitFor('document.getElementById("example-code-status").textContent.startsWith("Running")');assert.equal(await evaluate('document.getElementById("example-code").value'),original);
+await send('Page.navigate',{url:'http://127.0.0.1:8080/dist-pages/index.html?colors='+Date.now()+'#webxr'});await waitFor('document.querySelectorAll("#example-code-colors input").length>2');assert.deepEqual(errors,[]);console.log('PASS: picker changes exact literal, runs edited example, persists draft, handles duplicate/shorthand colors, resets, and loads on Pages.');ws.close();

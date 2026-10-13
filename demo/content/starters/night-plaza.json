@@ -1,0 +1,557 @@
+{
+  "format": "world-seed",
+  "version": 1,
+  "name": "Night plaza",
+  "environment": {
+    "background": "#101b30",
+    "ambient": 0.35
+  },
+  "camera": {
+    "position": [
+      22,
+      18,
+      25
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ]
+  },
+  "spawn": [
+    0,
+    0,
+    10
+  ],
+  "objects": [
+    {
+      "id": "75c097e6-2e54-4a73-98e5-b7ce5f9b872d",
+      "type": "ground",
+      "name": "Ground",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        6,
+        1,
+        6
+      ],
+      "color": "#555e69",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "03a01c96-e449-4a2e-afa6-27f5a5665078",
+      "type": "directionalLight",
+      "name": "DirectionalLight",
+      "position": [
+        12,
+        22,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#fff0d5",
+      "visible": true,
+      "physics": {
+        "mode": "none",
+        "mass": 5,
+        "restitution": 0.1
+      },
+      "intensity": 3
+    },
+    {
+      "id": "51b44eec-eb33-474b-bf41-b8ef9166e040",
+      "type": "cylinder",
+      "name": "Cylinder",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        5,
+        0.5,
+        5
+      ],
+      "color": "#8895a0",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "3f53c86e-d58d-4ce5-acee-b4afe53b84aa",
+      "type": "torus",
+      "name": "Torus",
+      "position": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "color": "#7db9d1",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "c2a5866e-a226-4ab9-8a6c-e22d8d3ce152",
+      "type": "streetlamp",
+      "name": "Streetlamp",
+      "position": [
+        11,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "color": "#3d4654",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "16a73857-399e-4531-8d3e-11c984d468b5",
+      "type": "bench",
+      "name": "Bench",
+      "position": [
+        7.699999999999999,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        -1.5707963267948966,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#aa8d76",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 25,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "4aab4049-146f-4ed7-958e-234e38f10e2a",
+      "type": "streetlamp",
+      "name": "Streetlamp",
+      "position": [
+        5.500000000000001,
+        0,
+        9.526279441628825
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "color": "#3d4654",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "2f850d60-06a1-495c-b213-6afffae0fd25",
+      "type": "bench",
+      "name": "Bench",
+      "position": [
+        3.8500000000000005,
+        0,
+        6.668395609140177
+      ],
+      "rotation": [
+        0,
+        -2.617993877991494,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#aa8d76",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 25,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "828b7b47-52c9-407c-b60e-16cfe736af3e",
+      "type": "streetlamp",
+      "name": "Streetlamp",
+      "position": [
+        -5.499999999999997,
+        0,
+        9.526279441628827
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "color": "#3d4654",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "dc2bdbea-bb4b-4cb7-95b7-ba25fc292d2b",
+      "type": "bench",
+      "name": "Bench",
+      "position": [
+        -3.849999999999998,
+        0,
+        6.668395609140179
+      ],
+      "rotation": [
+        0,
+        -3.665191429188092,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#aa8d76",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 25,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "485035a4-4433-4c01-81f0-c92740259404",
+      "type": "streetlamp",
+      "name": "Streetlamp",
+      "position": [
+        -11,
+        0,
+        1.3471114790620886e-15
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "color": "#3d4654",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "4efcdd07-780b-4909-8878-c5a8fdcb13a0",
+      "type": "bench",
+      "name": "Bench",
+      "position": [
+        -7.699999999999999,
+        0,
+        9.42978035343462e-16
+      ],
+      "rotation": [
+        0,
+        -4.71238898038469,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#aa8d76",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 25,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "ddfcd13a-c35d-47a4-a575-e2ba939f0a5f",
+      "type": "streetlamp",
+      "name": "Streetlamp",
+      "position": [
+        -5.500000000000005,
+        0,
+        -9.526279441628823
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "color": "#3d4654",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "f9514b5e-ea4a-4f6b-9d00-ec5b0ab5e58c",
+      "type": "bench",
+      "name": "Bench",
+      "position": [
+        -3.8500000000000036,
+        0,
+        -6.668395609140176
+      ],
+      "rotation": [
+        0,
+        -5.759586531581287,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#aa8d76",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 25,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "1a8b5822-618e-47da-ad64-5762e8d374d9",
+      "type": "streetlamp",
+      "name": "Streetlamp",
+      "position": [
+        5.500000000000001,
+        0,
+        -9.526279441628825
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "color": "#3d4654",
+      "visible": true,
+      "physics": {
+        "mode": "fixed",
+        "mass": 5,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "79326190-9334-4796-a6ed-969744f2fb8b",
+      "type": "bench",
+      "name": "Bench",
+      "position": [
+        3.8500000000000005,
+        0,
+        -6.668395609140177
+      ],
+      "rotation": [
+        0,
+        -6.806784082777885,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#aa8d76",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 25,
+        "restitution": 0.1
+      }
+    },
+    {
+      "id": "22ffeea7-d0d1-48ce-9634-e40b66fb920d",
+      "type": "pointLight",
+      "name": "PointLight",
+      "position": [
+        0,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#6bc7ff",
+      "visible": true,
+      "physics": {
+        "mode": "none",
+        "mass": 5,
+        "restitution": 0.1
+      },
+      "intensity": 160
+    },
+    {
+      "id": "09b4c7cc-bf41-4cf3-8393-ea1179db4b87",
+      "type": "person",
+      "name": "Person",
+      "position": [
+        -4,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ba8eac",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 70,
+        "restitution": 0.1
+      },
+      "behavior": {
+        "type": "wander",
+        "speed": 0.7,
+        "distance": 4,
+        "delay": 0,
+        "loop": true
+      }
+    },
+    {
+      "id": "7f1434bd-9400-4050-b0df-1f38378880ff",
+      "type": "person",
+      "name": "Person",
+      "position": [
+        4,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ba8eac",
+      "visible": true,
+      "physics": {
+        "mode": "dynamic",
+        "mass": 70,
+        "restitution": 0.1
+      },
+      "behavior": {
+        "type": "wander",
+        "speed": 0.7,
+        "distance": 4,
+        "delay": 0,
+        "loop": true
+      }
+    }
+  ]
+}
